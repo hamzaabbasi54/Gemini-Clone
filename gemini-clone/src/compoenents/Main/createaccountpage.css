@@ -1,0 +1,156 @@
+/* --- White Background for Entire Page --- */
+.CreateAccountPage {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff; /* full-page white background */
+}
+
+/* --- White Center Box --- */
+.createbox {
+    width: 32vw;
+    max-width: 500px;
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 30px 25px;
+    display: grid;
+    row-gap: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    color: #111;
+}
+
+/* --- Heading --- */
+.item1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #000;
+}
+
+/* --- Label + Input Fields --- */
+.item2,
+.item3,
+.item4 {
+    display: flex;
+    flex-direction: column;
+}
+
+.item2 p,
+.item3 p,
+.item4 p {
+    margin-bottom: 6px;
+    font-weight: 500;
+    color: #333;
+}
+
+.input {
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    color: #333;
+    font-size: 1rem;
+    outline: none;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* --- Password Input Wrapper --- */
+.input-icon {
+    position: relative;
+    width: 100%;
+    display: flex;
+}
+
+.input-icon input {
+    width: 100%;
+    padding-right: 40px;
+}
+
+/* --- Eye Icon --- */
+.eye-icon {
+    position: absolute;
+    top: 50%;
+    right: 12px;
+    transform: translateY(-50%);
+    font-size: 1.2rem;
+    color: #444;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.eye-icon:hover {
+    color: #ff4e50;
+}
+
+/* --- Create Button --- */
+.item5 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.create-btn {
+    padding: 12px 30px;
+    font-size: 1rem;
+    background: linear-gradient(135deg, #ff4e50, #f9d423);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(255, 78, 80, 0.4);
+}
+
+.create-btn:active {
+    transform: scale(0.95);
+}
+
+.create-btn:hover {
+    box-shadow: 0 0 12px rgba(255, 78, 80, 0.6),
+    0 0 20px rgba(249, 212, 35, 0.3);
+}
+
+/* -------------------- */
+/* 📱 Responsive Design */
+/* -------------------- */
+@media screen and (max-width: 768px) {
+    .createbox {
+        width: 80vw;
+        padding: 25px 20px;
+    }
+
+    .item1 {
+        font-size: 1.5rem;
+    }
+
+    .create-btn {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .createbox {
+        width: 90vw;
+        padding: 20px 16px;
+    }
+
+    .item1 {
+        font-size: 1.3rem;
+    }
+
+    .create-btn {
+        font-size: 0.95rem;
+        padding: 10px 20px;
+    }
+
+    .eye-icon {
+        font-size: 1rem;
+    }
+}
