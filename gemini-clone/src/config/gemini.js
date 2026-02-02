@@ -4,7 +4,7 @@ import {
     HarmBlockThreshold,
 } from "@google/generative-ai";
 
-const MODEL_NAME = "gemini-pro";
+const MODEL_NAME = "gemini-1.5-flash";
 const API_KEY = import.meta.env.VITE_API_KEY;
 
 console.log("Loaded API Key:", API_KEY ? "✓ API Key Found" : "✗ API Key Missing");
