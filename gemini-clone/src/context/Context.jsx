@@ -1,15 +1,15 @@
-import {createContext, useState} from "react";
+import { createContext, useState } from "react";
 import runChat from "../config/gemini.js";
 
 export const Context = createContext();
 const ContextProvider = (props) => {
 
-    const[input,setinput]=useState("");
-    const[recentPrompt,setRecentPrompt]=useState("");
-    const[prevPrompt,setPrevPrompt]=useState([]);
-    const[showResult,setShowResult]=useState(false);
-    const[loading,setLoading]=useState(false);
-    const[resultData, setResultData]=useState("");
+    const [input, setinput] = useState("");
+    const [recentPrompt, setRecentPrompt] = useState("");
+    const [prevPrompt, setPrevPrompt] = useState([]);
+    const [showResult, setShowResult] = useState(false);
+    const [loading, setLoading] = useState(false);
+    const [resultData, setResultData] = useState("");
 
     const onSent = async (prompt) => {
         setResultData("");
@@ -35,20 +35,11 @@ const ContextProvider = (props) => {
                 return;
             }
 
-            let responseArray = response.split("**");
-            let newResponse = "";
-
-            for(let i = 0; i < responseArray.length; i++){
-                if(i === 0 || i % 2 !== 1) {
-                    newResponse += responseArray[i];
-                } else {
-                    newResponse += "<b>" + responseArray[i] + "</b>";
-                }
-            }
-
-            let newResponse2 = newResponse.split("*").join("<br>");
-            console.log("Formatted response:", newResponse2); // Debug log
-            setResultData(newResponse2);
+            // Convert line breaks to <br> tags for HTML display
+            // The response is already cleaned by gemini.js
+            let formattedResponse = response.split("\n").join("<br>");
+            console.log("Formatted response:", formattedResponse);
+            setResultData(formattedResponse);
         } catch (error) {
             console.error("Error getting response:", error);
             setResultData("Sorry, there was an error getting the response: " + error.message);
